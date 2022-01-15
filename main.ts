@@ -1,22 +1,30 @@
 radio.onReceivedString(function (receivedString) {
     if (receivedString == "fata") {
-        wuKong.mecanumRun(wuKong.RunList.Front, 50)
+        wuKong.mecanumRun(wuKong.RunList.Front, viteza)
         basic.showArrow(ArrowNames.North)
     } else if (receivedString == "spate") {
-        wuKong.mecanumRun(wuKong.RunList.rear, 50)
+        wuKong.mecanumRun(wuKong.RunList.rear, viteza)
+        basic.showArrow(ArrowNames.South)
     } else if (receivedString == "stanga") {
-        wuKong.mecanumDrift(wuKong.TurnList.Left)
-    } else if (receivedString == "dreapta") {
         wuKong.mecanumDrift(wuKong.TurnList.Right)
+        basic.showArrow(ArrowNames.NorthEast)
+    } else if (receivedString == "dreapta") {
+        wuKong.mecanumDrift(wuKong.TurnList.Left)
+        basic.showArrow(ArrowNames.NorthEast)
     } else if (receivedString == "aluneca stanga") {
-        wuKong.mecanumRun(wuKong.RunList.left, 50)
+        wuKong.mecanumRun(wuKong.RunList.left, viteza)
+        basic.showArrow(ArrowNames.West)
     } else if (receivedString == "aluneca dreapta") {
-        wuKong.mecanumRun(wuKong.RunList.right, 50)
+        wuKong.mecanumRun(wuKong.RunList.right, viteza)
+        basic.showArrow(ArrowNames.East)
+    } else if (receivedString == "stop") {
+        wuKong.mecanumStop()
     }
     basic.pause(100)
-    wuKong.stopAllMotor()
-    basic.clearScreen()
+    wuKong.mecanumStop()
 })
+let viteza = 0
+viteza = 100
 wuKong.mecanumWheel(
 wuKong.ServoList.S0,
 wuKong.ServoList.S2,
