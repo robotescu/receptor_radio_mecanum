@@ -10,17 +10,17 @@ radio.onReceivedString(function (receivedString) {
         basic.showArrow(ArrowNames.NorthEast)
     } else if (receivedString == "dreapta") {
         wuKong.mecanumDrift(wuKong.TurnList.Left)
-        basic.showArrow(ArrowNames.NorthEast)
+        basic.showArrow(ArrowNames.NorthWest)
     } else if (receivedString == "aluneca stanga") {
         wuKong.mecanumRun(wuKong.RunList.left, viteza)
-        basic.showArrow(ArrowNames.West)
+        basic.showArrow(ArrowNames.East)
     } else if (receivedString == "aluneca dreapta") {
         wuKong.mecanumRun(wuKong.RunList.right, viteza)
-        basic.showArrow(ArrowNames.East)
+        basic.showArrow(ArrowNames.West)
     } else if (receivedString == "stop") {
         wuKong.mecanumStop()
     }
-    basic.pause(100)
+    basic.pause(200)
     wuKong.mecanumStop()
 })
 let viteza = 0
